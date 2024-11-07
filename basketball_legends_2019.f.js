@@ -369,8 +369,8 @@
         t.PRELOADER_TIME = 325,
         t.PRELOADER_TIME_HALF = 325,
         t.STEP = .025,
-        t.MATCH_TIME = 60,
-        t.OVERTIME_TIME = 15,
+        t.MATCH_TIME = 300,
+        t.OVERTIME_TIME = 60,
         t.LIMITS_FOR_ACHIEVS = [20, 50, 5, 5, 20, 50, 500, 25, 25, 150, 150],
         t
     }();
