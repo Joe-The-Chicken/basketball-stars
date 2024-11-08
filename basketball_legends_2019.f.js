@@ -3457,9 +3457,9 @@
         t.DEFENSE_POINT = 250,
         t.STEAL_DURATION = .3,
         t.THREE_POINTS_DISTANCE = 500,
-        t.DASH_DELAY = 1,
+        t.DASH_DELAY = 0.5,
         t.DIG_TIME = 3,
-        t.ENERGY_TIME = 3,
+        t.ENERGY_TIME = 2,
         t
     }();
     e.ObjectsData = a
@@ -5239,11 +5239,9 @@
                 this.wasEnd || (this.timer.label.text = "00.0",
                 this.wasEnd = !0,
                 u.Signals.MatchEndSignal.dispatch());
-            else if (120 === e)
-                this.timer.label.text = "2:00";
             else if (e >= 60) {
                 var i = e - 60 >> 0;
-                this.timer.label.text = i >= 10 ? "1:" + i.toString() : "1:0" + i.toString()
+                this.timer.label.text = i >= 10 ? (Math.floor(i / 60)).toString() + ':' + i.toString() : (Math.floor(i / 60)).toString() + ':0' + i.toString()
             } else {
                 var s = e >> 0
                   , a = 10 * (e - s) >> 0;
@@ -30184,7 +30182,7 @@
                 generateData: function(t, e) {
                     if (null === this.game || null === this.target)
                         return null;
-                    void 0 === t && (t = 60),
+                    void 0 === t && (t = 300),
                     void 0 === e && (e = []);
                     for (var i = 0; i < this.timeline.length; i++)
                         for (var s in this.timeline[i].vEnd)
